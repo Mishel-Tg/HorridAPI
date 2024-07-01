@@ -1,15 +1,21 @@
 from setuptools import setup, find_packages
-
-
+import re
+def version():
+    filename = "MukeshAPI/__init__.py"
+    with open(filename) as f:
+        match = re.search(r"""^__version__ = ['"]([^'"]*)['"]""", f.read(), re.M)
+    if not match:
+        raise RuntimeError("{} doesn't contain __version__".format(filename))
+    version = match.groups()[0]
+    return version
 with open("README.md", encoding="utf8") as readme:
     long_desc = readme.read()
-    
 
 
 # Setting up
 setup(
     name="HorridAPI",
-    version='0.4',
+    version=version(),
     author="Horrid",
     author_email="narutomalayalam@gmail.com",
     description="Horrid api toolz",
