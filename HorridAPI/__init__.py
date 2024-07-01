@@ -15,8 +15,7 @@ class HorridAPI:
     
 
     @staticmethod
-    def joke():        
-        prompt = quote(query)
+    def joke():                
         api = f'https://horrid-api.onrender.com/joke'
         res = requests.get(api).json()
         k = res['joke']
