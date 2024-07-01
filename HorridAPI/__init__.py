@@ -20,7 +20,21 @@ class HorridAPI:
         res = requests.get(api).json()
         k = res['joke']
         return k
-      
+
+    @staticmethod
+    def truth():                
+        api = f'https://horrid-api.onrender.com/truth'
+        res = requests.get(api).json()
+        k = res['truth']
+        return k
+
+    @staticmethod
+    def dare():                
+        api = f'https://horrid-api.onrender.com/dare'
+        res = requests.get(api).json()
+        k = res['dare']
+        return k
+        
     @staticmethod
     def llama(query: str):        
         prompt = quote(query)
