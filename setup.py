@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import re
 def version():
-    filename = "MukeshAPI/__init__.py"
+    filename = "HorridAPI/__init__.py"
     with open(filename) as f:
         match = re.search(r"""^__version__ = ['"]([^'"]*)['"]""", f.read(), re.M)
     if not match:
