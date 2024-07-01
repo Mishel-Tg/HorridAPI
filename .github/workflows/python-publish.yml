@@ -9,7 +9,7 @@ on:
     branches:
       - main
     paths:
-      - "SafoneAPI/__init__.py"
+      - "HorridAPI/__init__.py"
 
 jobs:
   deploy:
@@ -31,3 +31,4 @@ jobs:
       with:
         user: __token__
         password: ${{ secrets.PYPI_API_TOKEN }}
+        
