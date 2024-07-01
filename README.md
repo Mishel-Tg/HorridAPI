@@ -5,7 +5,7 @@ pip install HorridAPI
 ```
 
 
-# Llama Ai
+# Usage
 ```
 from HorridAPI import api
 ai = api.llama("who are you")
