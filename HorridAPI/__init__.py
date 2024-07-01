@@ -1,6 +1,8 @@
 import requests
 from urllib.parse import quote
 
+__version__ = "0.5"
+
 __all__ = ["api"]
 
 
