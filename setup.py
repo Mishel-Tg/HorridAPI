@@ -9,7 +9,7 @@ with open("README.md", encoding="utf8") as readme:
 # Setting up
 setup(
     name="HorridAPI",
-    version='0.3',
+    version='0.1',
     author="Horrid",
     author_email="narutomalayalam@gmail.com",
     description="Horrid api toolz",
