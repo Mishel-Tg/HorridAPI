@@ -1,50 +1,44 @@
+
 import requests
 from urllib.parse import quote
 
-__version__ = "0.5"
+version = "0.6"
 
-__all__ = ["api"]
+all = ["api"]
 
 
 class HorridAPI:
-    
-    def __init__(self)->None:
-        """     
-        @Mrz_bots 
-        """
-        pass
-
-    
+    """Horrid API Wrapper Class"""
 
     @staticmethod
-    def joke():                
+    def joke():
+        """Fetches a joke from the Horrid API."""
         api = f'https://horrid-api.onrender.com/joke'
         res = requests.get(api).json()
-        k = res['joke']
-        return k
+        return res['joke']
 
     @staticmethod
-    def truth():                
+    def truth():
+        """Fetches a truth statement from the Horrid API."""
         api = f'https://horrid-api.onrender.com/truth'
         res = requests.get(api).json()
-        k = res['truth']
-        return k
+        return res['truth']
 
     @staticmethod
-    def dare():                
+    def dare():
+        """Fetches a dare from the Horrid API."""
         api = f'https://horrid-api.onrender.com/dare'
         res = requests.get(api).json()
-        k = res['dare']
-        return k
-        
+        return res['dare']
+
     @staticmethod
-    def llama(query: str):        
+    def llama(query: str):
+        """Fetches a response from the Horrid API's llama endpoint."""
         prompt = quote(query)
         api = f'https://horrid-api.onrender.com/llama?query={prompt}'
         res = requests.get(api).json()
-        k = res['response']
-        return k
+        return res['response']
 
-
-api=HorridAPI()
-      
+# Instead of creating an instance and shadowing the built-in function
+# Use the class methods directly
+api = HorridAPI()
