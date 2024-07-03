@@ -2,9 +2,9 @@
 import requests
 from urllib.parse import quote
 
-version = "0.6"
+__version__ = "0.6"
 
-all = ["api"]
+__all__ = ["api"]
 
 
 class HorridAPI:
