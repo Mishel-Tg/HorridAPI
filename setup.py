@@ -18,7 +18,7 @@ setup(
     version=version(),
     author="Horrid",
     author_email="narutomalayalam@gmail.com",
-    description="Horrid api toolz",
+    description="Asynchronous Python Wrapper For HorridAPI",
     long_description_content_type="text/markdown",
     long_description=long_desc,
     packages=find_packages(),
