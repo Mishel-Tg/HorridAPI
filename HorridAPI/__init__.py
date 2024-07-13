@@ -2,7 +2,7 @@
 import requests
 from urllib.parse import quote
 
-__version__ = "0.6"
+__version__ = "0.7"
 
 __all__ = ["api"]
 
@@ -32,12 +32,22 @@ class HorridAPI:
         return res['dare']
 
     @staticmethod
+    def ai(query: str, prompt: str):
+        """Fetches a response from the Horrid API's Ai endpoint."""
+        query = quote(query)
+        api = f'https://horrid-api.onrender.com/ai'
+        headers = {"Content-Type": "application/json"}
+        data = {"query": query, "prompt": prompt}        
+        res = requests.post(api, headers=headers, json=data).json()
+        return res['response']
+
+    @staticmethod
     def llama(query: str):
         """Fetches a response from the Horrid API's llama endpoint."""
         prompt = quote(query)
         api = f'https://horrid-api.onrender.com/llama?query={prompt}'
         res = requests.get(api).json()
-        return res['response']
+        return res['response']        
 
 # Instead of creating an instance and shadowing the built-in function
 # Use the class methods directly
