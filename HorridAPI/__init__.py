@@ -2,7 +2,7 @@
 import requests
 from urllib.parse import quote
 
-__version__ = "0.7"
+__version__ = "0.8"
 
 __all__ = ["api"]
 
@@ -41,6 +41,13 @@ class HorridAPI:
         res = requests.post(api, headers=headers, json=data).json()
         return res['response']
 
+    @staticmethod
+    def gpt(query: str):        
+        prompt = quote(query)
+        api = f'https://horrid-api.onrender.com/gpt?query={prompt}'
+        res = requests.get(api).json()
+        return res['response']        
+        
     @staticmethod
     def llama(query: str):
         """Fetches a response from the Horrid API's llama endpoint."""
