@@ -2,7 +2,7 @@ from io import BytesIO
 import requests
 from urllib.parse import quote
 
-__version__ = "0.9"
+__version__ = "1.0"
 
 __all__ = ["api"]
 
