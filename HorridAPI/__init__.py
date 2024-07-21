@@ -1,8 +1,8 @@
-
+from io import BytesIO
 import requests
 from urllib.parse import quote
 
-__version__ = "0.8"
+__version__ = "0.9"
 
 __all__ = ["api"]
 
@@ -41,6 +41,13 @@ class HorridAPI:
         res = requests.post(api, headers=headers, json=data).json()
         return res['response']
 
+    @staticmethod
+    def qr(query: str):                
+        api = f'https://horrid-api.onrender.com/qr?text={query}'
+        response = requests.get(url)
+        img = BytesIO(response.content)
+        return img
+        
     @staticmethod
     def gpt(query: str):        
         prompt = quote(query)
