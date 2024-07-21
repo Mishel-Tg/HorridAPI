@@ -2,7 +2,7 @@ from io import BytesIO
 import requests
 from urllib.parse import quote
 
-__version__ = "1.0.10"
+__version__ = "1.0.11"
 
 __all__ = ["api"]
 
@@ -43,7 +43,7 @@ class HorridAPI:
 
     @staticmethod
     def qr(query: str):                
-        api = f'https://horrid-api.onrender.com/qr?text={query}'
+        url = f'https://horrid-api.onrender.com/qr?text={query}'
         response = requests.get(url)
         img = BytesIO(response.content)
         return img
