@@ -2,7 +2,7 @@ from io import BytesIO
 import requests
 from urllib.parse import quote
 
-__version__ = "1.0.11"
+__version__ = "1.0.12"
 
 __all__ = ["api"]
 
@@ -47,6 +47,12 @@ class HorridAPI:
         response = requests.get(url)
         img = BytesIO(response.content)
         return img
+
+    @staticmethod
+    def song(query: str):               
+        api = f'https://horrid-api.onrender.com/song?query={query}'
+        res = requests.get(api).json()
+        return res    
         
     @staticmethod
     def gpt(query: str):        
