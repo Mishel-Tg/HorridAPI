@@ -46,6 +46,6 @@ class Core:
         return prompt
         
     def upload(url: str):                
-        out = upload_file(url))
+        out = upload_file(url)
         return out
           
