@@ -2,7 +2,7 @@ from io import BytesIO
 import requests
 from urllib.parse import quote
 
-__version__ = "1.0.12"
+__version__ = "1.0.13"
 
 __all__ = ["api"]
 
@@ -59,7 +59,7 @@ class HorridAPI:
         prompt = quote(query)
         api = f'https://horrid-api.onrender.com/gpt?query={prompt}'
         res = requests.get(api).json()
-        return res['response']        
+        return res    
         
     @staticmethod
     def llama(query: str):
