@@ -6,7 +6,7 @@ class Core:
     """HorridAPI Core""" 
 
     def devloper ():                
-        prompt = "You are pro devploer"
+        prompt = "You are pro devploer, You are building a recommendation system for an e-commerce website. The system should analyze user behavior, such as browsing history, purchase history, and product ratings, to provide personalized product recommendations to users. The recommendation system should have the following features, you help in coding and fix error"
         return prompt
 
     def kannada ():                
