@@ -3,7 +3,9 @@ from telegraph import upload_file
 
 
 class Core:
-    """Image url"""
-
-    def upload(url)
-      
+    """HorridAPI Core"""    
+    
+    def upload(url: str):                
+        out = upload_file(url))
+        return out
+          
