@@ -59,4 +59,4 @@ class HorridAPI:
 
 # Instead of creating an instance and shadowing the built-in function
 # Use the class methods directly
-api = HorridAPI()
+api = HorridAPI
