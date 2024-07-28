@@ -5,7 +5,7 @@ from telegraph import upload_file
 class models:
     """HorridAPI Core""" 
         
-    def gemni():                        
+    def gemini():                        
         return "1"
 
 
