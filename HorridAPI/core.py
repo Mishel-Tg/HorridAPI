@@ -2,6 +2,13 @@ import requests
 from telegraph import upload_file
 
 
+class models:
+    """HorridAPI Core""" 
+        
+    def gemni():                        
+        return "1"
+
+
 class Core:
     """HorridAPI Core""" 
         
