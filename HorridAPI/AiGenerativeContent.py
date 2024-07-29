@@ -2,7 +2,7 @@ import requests
 
 class AiGenerativeContent:
 
-    def HorridAPI(query, model):
+    def gen_content(query, model):
         url = "https://horrid-api.onrender.com/ai"
         out = f"{url}?model={model}"
         response = requests.post(out, json=query)        
