@@ -1,13 +1,4 @@
-import requests
 from telegraph import upload_file
-
-
-class models:
-    """HorridAPI Core""" 
-        
-    def gemini():                        
-        return "1"
-
 
 class Core:
     """HorridAPI Core""" 
