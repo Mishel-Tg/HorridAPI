@@ -5,5 +5,6 @@ class Core:
         
     def upload(url: str):                
         out = upload_file(url)
-        return out
+        put = f"https://telegra.ph/{download[0]}"
+        return put
           
