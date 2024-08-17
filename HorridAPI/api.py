@@ -5,57 +5,58 @@ from urllib.parse import quote
 class HorridAPI:
     """Horrid API Wrapper Class"""
 
-    def joke():
+    def __init__(self, url='https://horrid-api-yihb.onrender.com/'):
+        self.url = url
+
+    def joke(self):
         """Fetches a joke from the Horrid API."""
-        api = f'https://horrid-api-yihb.onrender.com/joke'
+        api = f'{self.url}joke'
         res = requests.get(api).json()
         return res['joke']
 
-    def truth():
+    def truth(self):
         """Fetches a truth statement from the Horrid API."""
-        api = f'https://horrid-api-yihb.onrender.com/truth'
+        api = f'{self.url}truth'
         res = requests.get(api).json()
         return res['truth']
       
-    def dare():
+    def dare(self):
         """Fetches a dare from the Horrid API."""
-        api = f'https://horrid-api-yihb.onrender.com/dare'
+        api = f'{self.url}dare'
         res = requests.get(api).json()
         return res['dare']
 
-    def ai(query: str, prompt: str):
+    def ai(self, query: str, prompt: str):
         """Fetches a response from the Horrid API's Ai endpoint."""
         query = quote(query)
-        api = f'https://horrid-api-yihb.onrender.com/ai'
+        api = f'{self.url}ai'
         headers = {"Content-Type": "application/json"}
         data = {"query": query, "prompt": prompt}        
         res = requests.post(api, headers=headers, json=data).json()
         return res['response']
 
-    def qr(query: str):                
-        url = f'https://horrid-api-yihb.onrender.com/qr?text={query}'
+    def qr(self, query: str):                
+        url = f'{self.url}qr?text={query}'
         response = requests.get(url)
         img = BytesIO(response.content)
         return img
 
-    def song(query: str):               
-        api = f'https://horrid-api-yihb.onrender.com/song?query={query}'
+    def song(self, query: str):               
+        api = f'{self.url}song?query={query}'
         res = requests.get(api).json()
         return res    
         
-    def gpt(query: str):        
+    def gpt(self, query: str):        
         prompt = quote(query)
-        api = f'https://horrid-api-yihb.onrender.com/gpt?query={prompt}'
+        api = f'{self.url}gpt?query={prompt}'
         res = requests.get(api).json()
         return res    
         
-    def llama(query: str):
+    def llama(self, query: str):
         """Fetches a response from the Horrid API's llama endpoint."""
         prompt = quote(query)
-        api = f'https://horrid-api-yihb.onrender.com/llama?query={prompt}'
+        api = f'{self.url}llama?query={prompt}'
         res = requests.get(api).json()
         return res['response']        
 
-# Instead of creating an instance and shadowing the built-in function
-# Use the class methods directly
 api = HorridAPI
