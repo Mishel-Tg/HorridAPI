@@ -1,6 +1,6 @@
 import requests
 
-class AiGenerativeContent:
+class AiGenerative:
     """
     A class to generate content using AI models.
     """
@@ -63,4 +63,7 @@ class AiGenerativeContent:
         if response.status_code == 200:
             return response.json()
         else:
-            return response.text            
+            return response.text   
+
+
+AiGenerativeContent = AiGenerative()
