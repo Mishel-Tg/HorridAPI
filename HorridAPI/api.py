@@ -59,4 +59,4 @@ class HorridAPI:
         res = requests.get(api).json()
         return res['response']        
 
-api = HorridAPI
+api = HorridAPI()
