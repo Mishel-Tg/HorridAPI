@@ -2,7 +2,7 @@
 
 from .requests import Requests
 
-class FastTTV:
+class LLVA:
     def __init__(self, prompt, api_key):
         self.requests = Requests(api_key)
         self.prompt = prompt
