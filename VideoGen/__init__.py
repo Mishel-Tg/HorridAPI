@@ -1,2 +1,2 @@
-from .LLVA import *
+from .llava import *
 from .requests import*
