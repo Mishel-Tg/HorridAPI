@@ -1,4 +1,4 @@
-# huhu 
+# credit by @Mrz_bots
 
 from .requests import Requests
 
