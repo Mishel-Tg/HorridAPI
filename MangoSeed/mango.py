@@ -45,7 +45,7 @@ class Mseed:
             return "Invalid model. You Can Get model here https://horrid-api-yihb.onrender.com/ai."
         return self.models[model]
 
-    def generate(self, payload, user_id, model):
+    def generate(self, system, prompt, user_id, model):
         """
         Generate content using the specified AI model.
 
@@ -61,7 +61,20 @@ class Mseed:
         if isinstance(model_number, str):
             return model_number
 
-        url = f"{self.base_url}?model={model_number}"
+        api = f"{self.base_url}?model={model_number}"
+        system = system
+        prompt = prompt 
+        resp = ""
+        
+        user_data = self.collection.find_one({"user_id": user_id})
+        if user_data is None:
+            user_data = {"user_id": user_id, "messages": [{"role": "system", "content": system_prompt}]}
+        else:
+            user_data = user_data
+
+        user_data["messages"].append({"role": "user", "content": prompt})
+        
+        payload = {"messages": user_data["messages"]}
         response = requests.post(url, json=payload)
 
         if response.status_code == 200:
@@ -69,7 +82,7 @@ class Mseed:
             if user_data is None:
                 user_data = {"user_id": user_id, "messages": payload["messages"]}
             else:
-                user_data["messages"].extend(payload["messages"])
+                user_data["messages"].append(payload["messages"])
 
             self.collection.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
 
