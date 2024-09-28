@@ -44,13 +44,13 @@ MangoSeed is a super cool AI that offers the following features:
 * User Data Storage: You can save user data to the AI, allowing for personalized experiences and tailored interactions.
 * Upgradability: The AI can be upgraded to make it even more cool and advanced, ensuring it stays cutting-edge and efficient.
 
-MangoSeed sample code
+# MangoSeed sample code
 
 ```
 from MangoSeed import Mseed
 from MangoSeed.payload import create_payload
 
-Mseed.mongo("mongodb+srv://ATHIFA:ATHIFA@moviehub.ncpwndr.mongodb.net/?retryWrites=true&w=majority&appName=MOVIEHUB")
+Mseed.mongo("") # add here your mongo db
 
 payload = create_payload([
     {"role": "assistant", "content": "You are a helpful assistant, Your name is Gojo,"},
@@ -58,4 +58,19 @@ payload = create_payload([
 ])
 
 print(Mseed.generate(payload, 12345, "gemma"))
+```
+
+# MangoSeed user message delete
+
+how to delete that user message from db 🤔
+
+here the code of delete user data 
+
+```
+from MangoSeed import Mseed
+
+Mseed.mongo("") # add here your mongo db url
+
+
+Mseed.delete_user_messages(12345) # add here which user data you want delete that user id
 ```
