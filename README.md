@@ -43,3 +43,19 @@ MangoSeed is a super cool AI that offers the following features:
 
 * User Data Storage: You can save user data to the AI, allowing for personalized experiences and tailored interactions.
 * Upgradability: The AI can be upgraded to make it even more cool and advanced, ensuring it stays cutting-edge and efficient.
+
+MangoSeed sample code
+
+```
+from MangoSeed import Mseed
+from MangoSeed.payload import create_payload
+
+Mseed.mongo("mongodb+srv://ATHIFA:ATHIFA@moviehub.ncpwndr.mongodb.net/?retryWrites=true&w=majority&appName=MOVIEHUB")
+
+payload = create_payload([
+    {"role": "assistant", "content": "You are a helpful assistant, Your name is Gojo,"},
+    {"role": "user", "content": "who are you"}
+])
+
+print(Mseed.generate(payload, 12345, "gemma"))
+```
