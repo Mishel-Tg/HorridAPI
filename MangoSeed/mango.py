@@ -1,6 +1,7 @@
 import requests
 from pymongo import MongoClient
 from .models import models
+from .payload import create_payload
 
 class Mseed:
     def __init__(self, mongo_url, base_url="https://horridapi2-0.onrender.com/ai"):
@@ -75,3 +76,12 @@ class Mseed:
             return response.json()
         else:
             return response.text
+
+    def delete_user_messages(self, user_id):
+        """
+        Delete all messages for a user.
+
+        Args:
+            user_id (int): The ID of the user.
+        """
+        self.collection.delete_one({"user_id": user_id})
