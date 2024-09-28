@@ -75,7 +75,7 @@ class Mseed:
         user_data["messages"].append({"role": "user", "content": prompt})
         
         payload = {"messages": user_data["messages"]}
-        response = requests.post(url, json=payload)
+        response = requests.post(api, json=payload)
         resp = response.json()["response"]
 
         user_data["messages"].append({"role": "assistant", "content": resp})
