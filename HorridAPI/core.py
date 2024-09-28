@@ -28,8 +28,6 @@ class models:
         out = "1"
         return out
 
-from telegraph import upload_file
-
 class Core:
     """HorridAPI Core""" 
         
