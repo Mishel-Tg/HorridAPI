@@ -5,7 +5,7 @@ from urllib.parse import quote
 class HorridAPI:
     """Horrid API Wrapper Class"""
 
-    def __init__(self, url='https://horrid-api-yihb.onrender.com/'):
+    def __init__(self, url='https://horridapi2-0.onrender.com/'):
         self.url = url
 
     def joke(self):
