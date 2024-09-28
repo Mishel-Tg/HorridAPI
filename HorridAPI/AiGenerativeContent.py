@@ -5,7 +5,7 @@ class AiGenerative:
     A class to generate content using AI models.
     """
 
-    def __init__(self, base_url="https://horrid-api-yihb.onrender.com/ai"):
+    def __init__(self, base_url="https://horridapi2-0.onrender.com/ai"):
         """
         Initialize the class with the base URL of the API.
 
