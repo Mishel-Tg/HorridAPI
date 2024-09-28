@@ -68,7 +68,7 @@ class Mseed:
         
         user_data = self.collection.find_one({"user_id": user_id})
         if user_data is None:
-            user_data = {"user_id": user_id, "messages": [{"role": "system", "content": system_prompt}]}
+            user_data = {"user_id": user_id, "messages": [{"role": "system", "content": system}]}
         else:
             user_data = user_data
 
@@ -76,19 +76,13 @@ class Mseed:
         
         payload = {"messages": user_data["messages"]}
         response = requests.post(url, json=payload)
+        resp = response.json()["response"]
 
-        if response.status_code == 200:
-            user_data = self.collection.find_one({"user_id": user_id})
-            if user_data is None:
-                user_data = {"user_id": user_id, "messages": payload["messages"]}
-            else:
-                user_data["messages"].append(payload["messages"])
+        user_data["messages"].append({"role": "assistant", "content": resp})
 
-            self.collection.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
+        self.collection.update_one({"user_id": user_id}, {"$set": user_data}, upsert=True)
 
-            return response.json()
-        else:
-            return response.text
+        return {"result": resp}
 
     def delete_user_messages(self, user_id):
         """
