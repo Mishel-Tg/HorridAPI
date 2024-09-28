@@ -34,3 +34,12 @@ from HorridAPI import api
 ai = api.llama("who are you")
 print(ai)
 ```
+
+# MangoSeed 
+
+Introducing MangoSeed AI
+
+MangoSeed is a super cool AI that offers the following features:
+
+* User Data Storage: You can save user data to the AI, allowing for personalized experiences and tailored interactions.
+* Upgradability: The AI can be upgraded to make it even more cool and advanced, ensuring it stays cutting-edge and efficient.
