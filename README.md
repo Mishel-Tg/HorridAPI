@@ -50,14 +50,15 @@ MangoSeed is a super cool AI that offers the following features:
 from MangoSeed import Mseed
 from MangoSeed.payload import create_payload
 
-Mseed("") # add here your mongo db
+ai = Mseed("") # add here your mongo db
 
-payload = create_payload([
-    {"role": "assistant", "content": "You are a helpful assistant, Your name is Gojo,"},
-    {"role": "user", "content": "who are you"}
-])
-
-print(Mseed.generate(payload, 12345, "gemma"))
+response = ai.generate(
+            system="You are a Help full assistant, You act like a good human",
+            prompt=query,
+            user_id=message.from_user.id,
+            model="gpt-3.5"
+        )
+print(response["result"])
 ```
 
 # MangoSeed user message delete
@@ -69,8 +70,8 @@ here the code of delete user data
 ```
 from MangoSeed import Mseed
 
-Mseed("") # add here your mongo db url
+delete = Mseed("") # add here your mongo db url
 
 
-Mseed.delete_user_messages(12345) # add here which user data you want delete that user id
+delete.delete_user_messages(12345) # add here which user data you want delete that user id
 ```
