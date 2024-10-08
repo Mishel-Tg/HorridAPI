@@ -5,13 +5,13 @@ from .payload import create_payload
 
 class Mseed:
     def __init__(self, mongo_url):
-        return None
+        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
     
     def model(self, model):        
-        return None
+        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
 
     def generate(self, system, prompt, user_id, model):        
-        return None
+        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
 
     def delete_user_messages(self, user_id):
-        return None
+        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
