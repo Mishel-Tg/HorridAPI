@@ -1,6 +1,6 @@
 import requests
 
-class MangoFilx:
+class Mango:
     """
     A class to generate content using AI models.
     """
