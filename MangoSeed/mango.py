@@ -1,17 +1,40 @@
-# temporary removed 
-
+import requests
 from .models import models
 from .payload import create_payload
 
 class Mseed:
     def __init__(self, mongo_url):
-        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
-    
-    def model(self, model):        
-        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
+        """
+        Initialize the class with the MongoDB URL.
 
-    def generate(self, system, prompt, user_id, model):        
-        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
+        Args:
+            mongo_url (str): The URL of the MongoDB
+        """
+        self.mongo_url = mongo_url      
+
+    def generate(self, system, prompt, user_id, model):
+        """
+        Generate content using the specified AI model.
+
+        Args:
+            payload (dict): The payload to generate content for.
+            user_id (int): The ID of the user.
+            model (str): The AI model to use.
+
+        Returns:
+            dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
+        """
+        api = "https://horridapi2-0.onrender.com/mango_generate"
+        json = {"mongo_url": self.mongo_url, "system": system, "user_id": user_id, "model": model, "prompt": prompt}
+        k = requests.post(api, json=json)        
+        return k.text
 
     def delete_user_messages(self, user_id):
-        raise ImportError("Mango seed temporary closed if you want use mango seed use pip HorridAPI==1.0.35")
+        """
+        Delete all messages for a user.
+
+        Args:
+            user_id (int): The ID of the user.
+        """
+        k = "https://horridapi2-0.onrender.com/mango_delete_user_messages"
+        json = {"user_id": user_id, "mongo_url": self.mongo_url}
