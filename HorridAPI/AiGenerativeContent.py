@@ -5,7 +5,7 @@ class AiGenerative:
     A class to generate content using AI models.
     """
 
-    def __init__(self, base_url="https://horridapi2-0.onrender.com/ai"):
+    def __init__(self, base_url="https://horridapi.onrender.com/mango"):
         """
         Initialize the class with the base URL of the API.
 
@@ -27,13 +27,13 @@ class AiGenerative:
 
         Args:
             query (str): The query to generate content for.
-            model (str): The AI model to use ("https://horrid-api-yihb.onrender.com/ai").
+            model (str): The AI model to use ("https://horridapi.onrender.com/mango").
 
         Returns:
             dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
         """
         if model not in self.models:
-            return "Invalid model. You Can Get model here https://horrid-api-yihb.onrender.com/ai."
+            return "Invalid model. You Can Get model here https://horridapi.onrender.com/mango."
 
         url = f"{self.base_url}?model={self.models[model]}"
         response = requests.post(url, json=query)
@@ -55,7 +55,7 @@ class AiGenerative:
             dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
         """
         if model not in self.models:
-            return "Invalid model. You Can Get model here https://horrid-api-yihb.onrender.com/ai."
+            return "Invalid model. You Can Get model here https://horridapi.onrender.com/mango."
 
         url = f"{self.base_url}?model={self.models[model]}&query={query}"
         response = requests.post(url)
