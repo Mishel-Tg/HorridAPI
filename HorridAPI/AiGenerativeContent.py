@@ -20,29 +20,7 @@ class AiGenerative:
             "gemma-2": 4,
             "gpt-3.5": 5
         }
-
-    def gen_content(self, query, model):
-        """
-        Generate content using the specified AI model.
-
-        Args:
-            query (str): The query to generate content for.
-            model (str): The AI model to use ("https://horridapi.onrender.com/mango").
-
-        Returns:
-            dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
-        """
-        if model not in self.models:
-            return "Invalid model. You Can Get model here https://horridapi.onrender.com/mango."
-
-        url = f"{self.base_url}?model={self.models[model]}"
-        response = requests.post(url, json=query)
-
-        if response.status_code == 200:
-            return response.json()
-        else:
-            return response.text
-    
+        
     def Content(self, query, model):
         """
         Generate content using the specified AI model.
