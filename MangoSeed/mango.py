@@ -24,10 +24,12 @@ class Mseed:
         Returns:
             dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
         """
-        api = "https://horridapi2-0.onrender.com/mango_generate"
+        api = "https://horridapi.onrender.com/mango_generate"
         json = {"mongo_url": self.mongo_url, "system": system, "user_id": user_id, "model": model, "prompt": prompt}
-        k = requests.post(api, json=json)        
-        return k.text
+        k = requests.post(api, json=json)      
+        data = k.json()
+        result = k["result"]
+        return {"result": result}
 
     def delete_user_messages(self, user_id):
         """
@@ -36,5 +38,5 @@ class Mseed:
         Args:
             user_id (int): The ID of the user.
         """
-        k = "https://horridapi2-0.onrender.com/mango_delete_user_messages"
+        k = "https://horridapi.onrender.com/mango_delete_user_messages"
         json = {"user_id": user_id, "mongo_url": self.mongo_url}
