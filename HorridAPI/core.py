@@ -4,7 +4,6 @@ gemini_pro = 3
 gemmaa = 4
 gpt = 5
 
-
 class models:
     """HorridAPI Model""" 
 
