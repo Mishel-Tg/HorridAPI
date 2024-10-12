@@ -5,7 +5,7 @@ from urllib.parse import quote
 class HorridAPI:
     """Horrid API Wrapper Class"""
 
-    def __init__(self, url='https://horridapi2-0.onrender.com/'):
+    def __init__(self, url='https://horridapi.onrender.com/'):
         self.url = url
 
     def joke(self):
@@ -25,15 +25,6 @@ class HorridAPI:
         api = f'{self.url}dare'
         res = requests.get(api).json()
         return res['dare']
-
-    def ai(self, query: str, prompt: str):
-        """Fetches a response from the Horrid API's Ai endpoint."""
-        query = quote(query)
-        api = f'{self.url}ai'
-        headers = {"Content-Type": "application/json"}
-        data = {"query": query, "prompt": prompt}        
-        res = requests.post(api, headers=headers, json=data).json()
-        return res['response']
 
     def qr(self, query: str):                
         url = f'{self.url}qr?text={query}'
