@@ -8,6 +8,6 @@ class Requests:
         self.api_key = api_key
 
     def get_video(self, prompt):
-        url = f"https://horridapi2-0.onrender.com/txt2vid?prompt={prompt}&api_key={self.api_key}"
+        url = f"https://horridapi.onrender.com/txt2vid?prompt={prompt}&api_key={self.api_key}"
         response = requests.get(url)
         return response.content
