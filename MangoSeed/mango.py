@@ -28,7 +28,7 @@ class Mseed:
         json = {"mongo_url": self.mongo_url, "system": system, "user_id": user_id, "model": model, "prompt": prompt}
         k = requests.post(api, json=json)      
         data = k.json()
-        result = k["result"]
+        result = data["result"]
         return {"result": result}
 
     def delete_user_messages(self, user_id):
