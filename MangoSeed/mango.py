@@ -38,5 +38,6 @@ class Mseed:
         Args:
             user_id (int): The ID of the user.
         """
-        k = "https://horridapi.onrender.com/mango_delete_user_messages"
+        k = "https://horridapi.onrender.com/mango_delete_user_messages"        
         json = {"user_id": user_id, "mongo_url": self.mongo_url}
+        data = requests.post(k, json=json)
