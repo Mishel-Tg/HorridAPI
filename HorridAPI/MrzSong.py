@@ -1,3 +1,5 @@
+# (c) @HORRIDduo
+
 import requests
 
 class Songmrz:
