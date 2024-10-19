@@ -18,16 +18,7 @@ class Songmrz:
             'thumb': data['thumb'],
             'title': data['title'],
             'url': data['url']
-        }
-        
-        # Download the audio file
-        audio_response = requests.get(song_details['url'])
-        title = song_details['title'].replace(" ", "_")  # Replace spaces with underscores for filename
-        
-        with open(f"{title}.mp3", "wb") as f:
-            f.write(audio_response.content)
-        
-        # Return the song details as an object
+        }                
         return SongObject(song_details)
 
 class SongObject:
