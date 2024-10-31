@@ -91,7 +91,7 @@ class HorridAPI:
 
     def imagine(self, prompt=None, api_key=None):
         if not prompt:
-            raise ValueError(
+            raise ValueError("Where the prompt?")
         api = requests.get(f"{self.url}imagine?api_key={api_key}&prompt={prompt}")
         k = api.json()
         if not api_key:
@@ -102,7 +102,9 @@ class HorridAPI:
         return api.content
             
 
-    def image_search(self, query):        
+    def image_search(self, query=None):  
+        if not query:
+            raise ValueError("Where the query?")
         api = f'{self.url}image_search?query={query}'
         res = requests.get(api)
         if res.status_code == 200:
@@ -110,7 +112,9 @@ class HorridAPI:
         else:
             return f"Error fetching image search response"            
  
-    def bard(self, query):        
+    def bard(self, query=None):    
+        if not query:
+            raise ValueError("Where the query?")
         api = f'{self.url}bard?query={query}'
         res = requests.get(api)
         if res.status_code == 200:
@@ -123,7 +127,9 @@ class HorridAPI:
         res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query)        
         return res.json()
         
-    def llama(self, query):
+    def llama(self, query=None):
+        if not query:
+            raise ValueError("Where the query?")
         """Fetches a response from the Horrid API's llama endpoint."""
         api = f'{self.url}llama?query={query}'
         res = requests.get(api)
