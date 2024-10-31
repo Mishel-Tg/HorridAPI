@@ -9,7 +9,7 @@
 
 
 
-mango = {
+hehmango = {
     "gemini": 1,
     "gemma": 2,
     "gemini-pro": 3,
