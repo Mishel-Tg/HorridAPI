@@ -43,6 +43,11 @@ class Completions:
 
 class Choices:
     def __init__(self, response):      
-        self.text = response.get("response", "Api was Error")
+        self.choices = [response]
+        self.message = Message(self, self.choices)
+
+class Message:
+    def __init__(self, response):
+        self.content = response["response"]
 
 Mango = Mangoo()  
