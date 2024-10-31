@@ -27,11 +27,13 @@ class Completions:
         self.chat = chat
 
     def create(self, model=None, messages=None):
+        if model not in hehmango:
+            raise ValueError("Invalid model")        
         if not model:
             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
         if not messages:
             raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
-        api = f"{self.chat.mango.base_url}?model={model}"  
+        api = f"{self.chat.mango.base_url}?model={hehmango[model]}"  
         response = requests.post(api, json=messages)
 
         if response.status_code == 200:         
