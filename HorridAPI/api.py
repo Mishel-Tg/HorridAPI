@@ -1,6 +1,5 @@
 from io import BytesIO
 import requests
-from urllib.parse import quote
 
 class HorridAPI:
     """Horrid API Wrapper Class"""
@@ -11,43 +10,79 @@ class HorridAPI:
     def joke(self):
         """Fetches a joke from the Horrid API."""
         api = f'{self.url}joke'
-        res = requests.get(api).json()
-        return res['joke']
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json().get('joke', 'No joke found.')
+        else:
+            return f"Error fetching joke: {res.status_code}"
 
     def truth(self):
         """Fetches a truth statement from the Horrid API."""
         api = f'{self.url}truth'
-        res = requests.get(api).json()
-        return res['truth']
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json().get('truth', 'No truth found.')
+        else:
+            return f"Error fetching truth: {res.status_code}"
       
     def dare(self):
         """Fetches a dare from the Horrid API."""
         api = f'{self.url}dare'
-        res = requests.get(api).json()
-        return res['dare']
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json().get('dare', 'No dare found.')
+        else:
+            return f"Error fetching dare: {res.status_code}"
 
-    def qr(self, query: str):                
+    def qr(self, query):                
         url = f'{self.url}qr?text={query}'
         response = requests.get(url)
-        img = BytesIO(response.content)
-        return img
+        if response.status_code == 200:
+            img = BytesIO(response.content)
+            return img
+        else:
+            return f"Error generating QR code: {response.status_code}"
 
-    def song(self, query: str):               
+    def song(self, query):               
         api = f'{self.url}song?query={query}'
-        res = requests.get(api).json()
-        return res    
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching song: {res.status_code}"
         
-    def gpt(self, query: str):        
-        prompt = quote(query)
-        api = f'{self.url}gpt?query={prompt}'
-        res = requests.get(api).json()
-        return res    
+    def gpt(self, query):        
+        api = f'{self.url}gpt?query={query}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching GPT response: {res.status_code}"
+
+    def waifu(self):
+        api = f'{self.url}anime/waifu'
+        res = requests.get(api)
+        if res.status_code == 200:
+            img = BytesIO(res.content)
+            return img
+        else:
+            return f"Error fetching waifu image: {res.status_code}"
+
+    def bard(self, query):        
+        api = f'{self.url}bard?query={query}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching bard response: {res.status_code}"
         
-    def llama(self, query: str):
+    def llama(self, query):
         """Fetches a response from the Horrid API's llama endpoint."""
-        prompt = quote(query)
-        api = f'{self.url}llama?query={prompt}'
-        res = requests.get(api).json()
-        return res['response']        
+        api = f'{self.url}llama?query={query}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json().get('response', 'No response found.')
+        else:
+            return f"Error fetching llama response: {res.status_code}"
 
 api = HorridAPI()
