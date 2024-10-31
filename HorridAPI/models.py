@@ -9,7 +9,7 @@
 
 
 
-hehmango = {
+hehmango = {    
     "gemini": 1,
     "gemma": 2,
     "gemini-pro": 3,
@@ -17,5 +17,15 @@ hehmango = {
     "gpt-3.5": 5,
     "gpt-4o-mini": 6,
     "gpt-4o-mini-2": 7,
-    "llama3-70b": 8
+    "llama3-70b": 8,
+    1: 1,
+    2: 2,
+    3: 3,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
 }
+
+
