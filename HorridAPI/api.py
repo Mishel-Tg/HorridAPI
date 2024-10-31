@@ -131,8 +131,50 @@ class HorridAPI:
         if not song:
             raise ValueError("Give any song name")
         api = f'{self.url}lyrics?song={song}'
-        hehe = requests.post(api).json()
+        hehe = requests.get(api).json()
         return hehe
+
+    def news(self, query=None):  
+        if not query:
+            raise ValueError("Give any query")
+        api = f'{self.url}news?query={query}'
+        hehe = requests.get(api).json()
+        return hehe
+
+    def proxy(self, url=None):  
+        if not url:
+            raise ValueError("Give an url")
+        api = f'{self.url}proxy?url={url}'
+        hehe = requests.get(api).json()
+        return hehe
+
+    def search(self, query=None, link=None):  
+        if not query:
+            raise ValueError("Give any query")
+        if not link:
+            raise ValueError("Give any image link")
+        api = f'{self.url}search?query={query}&img={link}'
+        hehe = requests.get(api).json()
+        return hehe
+
+    def wiki(self, query=None):  
+        if not query:
+            raise ValueError("Give any query")
+        api = f'{self.url}wiki?query={query}'
+        hehe = requests.get(api).json()
+        return hehe
+
+    def upscale(self, url=None, api_key=None, scale=8):
+        if not url:
+            raise ValueError("Give the image url")
+        api = requests.get(f"{self.url}upscale?api_key={api_key}&url={url}&scale={scale}")
+        k = api.json()
+        if not api_key:
+            raise ValueError("Unauthorized You can get api key here https://t.me/XBOTSUPPORTS")
+        if 'error' in k and 'Unauthorized' in k["error"]:
+            raise ValueError("Unauthorized You can get api key here https://t.me/XBOTSUPPORTS")
+
+        return api.content
  
     def bard(self, query=None):    
         if not query:
