@@ -1,5 +1,5 @@
 import requests
-from models import hehmango
+from models import hehmango  
 
 class Mangoo:
     """
@@ -14,28 +14,33 @@ class Mangoo:
             base_url (str, optional): The base URL of the API. Defaults to "https://horridapi.onrender.com/mango".
         """
         self.base_url = base_url
-        self.models = hehmango       
+        self.models = hehmango      
+        self.chat = Chat(self)
 
-    def seed(self, prompt, model):
-        """
-        Generate content using the specified AI model.
+class Chat:
+    def __init__(self, mango):
+        self.mango = mango
+        self.completions = Completions(self)
 
-        Args:
-            query (str): The query to generate content for.
-            model (str): The AI model to use ("https://horridapi.onrender.com/mango").
+class Completions:
+    def __init__(self, chat):
+        self.chat = chat
 
-        Returns:
-            dict or str: The generated content as a dictionary if the response is successful, otherwise the error message as a string.
-        """
-        if model not in self.models:
-            return "Invalid model. You Can Get model here https://horridapi.onrender.com/mango."
+    def create(self, model=None, messages=None):
+        if not model:
+            raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
+        if not messages:
+            raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+        api = f"{self.chat.mango.base_url}?model={model}"  
+        response = requests.post(api, json=messages)
 
-        url = f"{self.base_url}?model={self.models[model]}"
-        response = requests.post(url, json=prompt)
-
-        if response.status_code == 200:
-            return response.json()
+        if response.status_code == 200:         
+            return Choices(response.json())
         else:
-            return response.text
-    
-Mango = Mangoo()
+            raise Exception(f"API request failed with status code: {response.status_code}")
+
+class Choices:
+    def __init__(self, response):      
+        self.choices = response.get("response", "Api was Error")
+
+Mango = Mangoo()  
