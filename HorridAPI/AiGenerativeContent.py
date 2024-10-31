@@ -1,4 +1,5 @@
 import requests
+from models import hehmango
 
 class AiGenerative:
     """
@@ -13,13 +14,7 @@ class AiGenerative:
             base_url (str, optional): The base URL of the API. Defaults to "https://horrid-api-yihb.onrender.com/ai".
         """
         self.base_url = base_url
-        self.models = {
-            "gemini": 1,
-            "gemma": 2,
-            "gemini-pro": 3,
-            "gemma-2": 4,
-            "gpt-3.5": 5
-        }
+        self.models = hehmango            
         
     def Content(self, query, model):
         """
