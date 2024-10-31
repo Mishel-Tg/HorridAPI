@@ -188,7 +188,7 @@ class Async:
 
     async def aipro(self, botname, query, owner):       
         api = f'{self.url}aipro'
-        res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query)        
+        res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query})        
         return res.json()
         
     async def llama(self, query=None):
