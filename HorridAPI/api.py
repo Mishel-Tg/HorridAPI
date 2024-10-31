@@ -187,8 +187,8 @@ class HorridAPI:
             return f"Error fetching bard response: {res.status_code}"
 
     def aipro(self, botname, query, owner):       
-        api = f'{self.url}aipro'
-        res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query)        
+        api = f'{self.url}aipro'        
+        res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query})      
         return res.json()
         
     def llama(self, query=None):
