@@ -1,5 +1,5 @@
 import requests
-from models import hehmango
+from .models import hehmango
 
 class AiGenerative:
     """
