@@ -99,8 +99,7 @@ class HorridAPI:
         if 'error' in k and 'Unauthorized' in k["error"]:
             raise ValueError("Unauthorized You can get api key here https://t.me/XBOTSUPPORTS")
 
-        return api.content
-            
+        return api.content           
 
     def image_search(self, query=None):  
         if not query:
@@ -110,7 +109,30 @@ class HorridAPI:
         if res.status_code == 200:
             return res.json()
         else:
-            return f"Error fetching image search response"            
+            return f"Error fetching image search response"   
+
+    def instadl(self, url=None):  
+        if not url:
+            raise ValueError("Where the instgram url?")
+        api = f'{self.url}instadl?url={url}'
+        hehe = requests.get(api).json()
+        if not hehe["STATUS"] == OK:
+            raise ValueError("Its not a Instagram url")
+        return hehe
+
+    def logo(self, text=None):  
+        if not text:
+            raise ValueError("Give any name for the logo")
+        api = f'{self.url}logo?text={text}'
+        hehe = requests.post(api).json()
+        return hehe
+
+    def lyrics(self, song=None):  
+        if not song:
+            raise ValueError("Give any song name")
+        api = f'{self.url}lyrics?song={song}'
+        hehe = requests.post(api).json()
+        return hehe
  
     def bard(self, query=None):    
         if not query:
