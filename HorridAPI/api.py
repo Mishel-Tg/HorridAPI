@@ -34,7 +34,9 @@ class HorridAPI:
         else:
             return f"Error fetching dare: {res.status_code}"
 
-    def qr(self, query):                
+    def qr(self, query=None): 
+        if not query:
+            raise ValueError("Please Give Any query")
         url = f'{self.url}qr?text={query}'
         response = requests.get(url)
         if response.status_code == 200:
@@ -51,7 +53,9 @@ class HorridAPI:
         else:
             return f"Error fetching song: {res.status_code}"
         
-    def gpt(self, query):        
+    def gpt(self, query=None): 
+        if not query:
+            raise ValueError("Please Give any query add query=hi like that")
         api = f'{self.url}gpt?query={query}'
         res = requests.get(api)
         if res.status_code == 200:
@@ -68,6 +72,44 @@ class HorridAPI:
         else:
             return f"Error fetching waifu image: {res.status_code}"
 
+    def enhance(self, image=None):
+        if not image:
+            raise ValueError("Where the image If you don't know how to use this you can use Mangandi pip install mangandi")
+        api = requests.post(f"{self.url}enhance", files={"image": image})
+        bio = BytesIO(api.content)
+        return bio
+
+    def execute(self, code=None, language=None, version=None):  
+        if not code:
+            raise ValueError("where the code?")
+        if not language:
+            raise ValueError("where the language?")
+        if not version:
+            raise ValueError("Where the version?")
+        api = requests.post(f"{self.url}execute", json={"code": code, "language": language, "version": version})
+        return api.json()
+
+    def imagine(self, prompt=None, api_key=None):
+        if not prompt:
+            raise ValueError(
+        api = requests.get(f"{self.url}imagine?api_key={api_key}&prompt={prompt}")
+        k = api.json()
+        if not api_key:
+            raise ValueError("Unauthorized You can get api key here https://t.me/XBOTSUPPORTS")
+        if 'error' in k and 'Unauthorized' in k["error"]:
+            raise ValueError("Unauthorized You can get api key here https://t.me/XBOTSUPPORTS")
+
+        return api.content
+            
+
+    def image_search(self, query):        
+        api = f'{self.url}image_search?query={query}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching image search response"            
+ 
     def bard(self, query):        
         api = f'{self.url}bard?query={query}'
         res = requests.get(api)
