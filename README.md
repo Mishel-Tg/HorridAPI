@@ -35,6 +35,18 @@ ai = api.llama("who are you")
 print(ai)
 ```
 
+# Mango Ai
+```
+from HorridAPI import Mango
+
+response = Mango.chat.completions.create(
+    model="gpt-3.5",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+print(response.choices[0].message.content)
+```
+
 # MangoSeed 
 
 Introducing MangoSeed AI
