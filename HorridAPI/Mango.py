@@ -39,10 +39,10 @@ class Completions:
         if response.status_code == 200:         
             return Choices(response.json())
         else:
-            raise Exception(f"API request failed with status code: {response.status_code}")
+            raise Exception(f"API request failed Please try few minutes or Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 class Choices:
     def __init__(self, response):      
-        self.choices = response.get("response", "Api was Error")
+        self.text = response.get("response", "Api was Error")
 
 Mango = Mangoo()  
