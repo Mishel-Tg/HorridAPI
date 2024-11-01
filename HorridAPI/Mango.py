@@ -47,7 +47,7 @@ class Completions:
 
 class Choices:
     def __init__(self, response):      
-        self.response = response["response"]
+        self.text = response["response"]
         
 
 Mango = Mangoo()  
