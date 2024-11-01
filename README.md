@@ -39,7 +39,9 @@ print(ai)
 ```
 from HorridAPI import Mango
 
-response = Mango.chat.completions.create(
+mango = Mango()
+
+response = mango.chat.completions.create(
     model="gpt-3.5",
     messages=[{"role": "user", "content": "Hello"}]
 )
