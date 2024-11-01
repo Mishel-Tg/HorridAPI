@@ -33,17 +33,14 @@ class Completions:
             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
         if not messages:
             raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
-        if not "messages" in messages:
-            ms = {'messages': messages}
-        else:
-            ms = messages
+        ms = {'messages': messages}        
         api = f"{self.chat.mango.base_url}?model={hehmango[model]}"  
         response = requests.post(api, json=ms)
 
         if response.status_code == 200:         
             return Choices(response.json())
         else:
-            raise Exception(f"API request failed Please try few minutes or Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+            raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 class Choices:
     def __init__(self, response):      
