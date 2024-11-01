@@ -33,7 +33,7 @@ class Completions:
             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
         if not messages:
             raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
-        if not "messages" in k:
+        if not "messages" in messages:
             ms = {'messages': messages}
         else:
             ms = messages
