@@ -44,7 +44,7 @@ response = Mango.chat.completions.create(
     messages=[{"role": "user", "content": "Hello"}]
 )
 
-print(response.response)
+print(response.text)
 ```
 
 # MangoSeed 
