@@ -4,6 +4,6 @@ from .AiGenerativeContent import *
 from .MrzSong import *
 from .Async import *
 
-__version__ = "1.0.50"
+__version__ = "1.0.51"
 
 __all__ = ["api"]
