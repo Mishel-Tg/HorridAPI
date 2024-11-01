@@ -1,7 +1,7 @@
 import requests
 from .models import hehmango  
 
-class Mangoo:
+class Mango:
     """
     A class to generate content using AI models.
     """
@@ -50,4 +50,3 @@ class Choices:
         self.text = response["response"]
         
 
-Mango = Mangoo()  
