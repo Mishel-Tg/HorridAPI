@@ -26,7 +26,7 @@ class Completions:
     def __init__(self, chat):
         self.chat = chat
 
-    def create(self, model=None, messages=None, stream=False):
+    def create(self, model=None, messages=None):
         if model not in hehmango:
             raise ValueError("Invalid model")        
         if not model:
@@ -38,17 +38,23 @@ class Completions:
         response = requests.post(api, json=ms)
 
         if response.status_code == 200:         
-            return Choices(response.json(), stream)
+            return Choices(response.json())
         else:
             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 class Choices:
-    def __init__(self, response, stream):  
-        if stream:
-            lines = response['response'].strip().split()
-            lines = [line for line in lines if line != 'That']                     
-            self.text = '\n'.join(lines)
-        else:
-            self.text = response["response"]
+    def __init__(self, response):  
+        self.choices = MEssm([response])
+        self.text = response["response"]
+
+
+
+class MEssm:
+    def __init__(self, response):
+        self.message = hehl(response)
+
+class hehl:    
+    def __init__(self, response):
+        self.content = response["response"]
         
 
