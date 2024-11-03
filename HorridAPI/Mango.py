@@ -45,9 +45,9 @@ class Completions:
 class Choices:
     def __init__(self, response, stream):  
         if stream:
-            lines = response['response'].strip().split()
-            for line in lines:
-                self.text = line
+            lines = response_data['response'].strip().split()
+            lines = [line for line in lines if line != 'That']                     
+            self.text = '\n'.join(lines)
         else:
             self.text = response["response"]
         
