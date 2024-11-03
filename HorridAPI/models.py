@@ -19,7 +19,7 @@ hehmango = {
     "gpt-4o-mini-2": 7,
     "llama3-70b": 8,
     "claude-3.5-sonnet": 9,
-    "gpt-4o": 10:
+    "gpt-4o": 10,
     "1": 1,
     "2": 2,
     "3": 3,
