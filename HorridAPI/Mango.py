@@ -43,18 +43,7 @@ class Completions:
             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 class Choices:
-    def __init__(self, response):  
-        self.choices = MEssm([response])
+    def __init__(self, response):          
         self.text = response["response"]
 
-
-
-class MEssm:
-    def __init__(self, response):
-        self.message = hehl(response)
-
-class hehl:    
-    def __init__(self, response):
-        self.content = response["response"]
-        
 
