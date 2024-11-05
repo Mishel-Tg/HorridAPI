@@ -62,7 +62,17 @@ class Async:
             return res.json()
         else:
             return f"Error fetching GPT response: {res.status_code}"
-
+            
+    async def images(self, query=None, page=6):  
+        if not query:
+            raise ValueError("Where the query?")
+        api = f'{self.url}images?query={query}&page={page}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching image search response"   
+            
     async def waifu(self):
         api = f'{self.url}anime/waifu'
         res = requests.get(api)
