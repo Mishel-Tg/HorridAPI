@@ -10,7 +10,7 @@
 
 
 hehmango = {    
-    "gemini": 1,
+    "gemini-1.5-flash": 1,
     "gemma": 2,
     "gemini-pro": 3,
     "gemma-2": 4,
