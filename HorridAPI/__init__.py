@@ -5,6 +5,6 @@ from .MrzSong import *
 from .Llava import LLVA
 from .Async import *
 
-__version__ = "1.0.62"
+__version__ = "1.0.63"
 
 __all__ = ["api"]
