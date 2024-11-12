@@ -27,6 +27,8 @@
 pip install HorridAPI
 ```
 
+
+
 # Mango 
 ```
 from HorridAPI import Mango
@@ -40,6 +42,26 @@ response = mango.chat.completions.create(
 
 print(response.text)
 ```
+
+
+
+# song download
+
+```
+from HorridAPI import Songmrz
+
+api_key = "horridapi_Db9RVKwf6zaBM8iatiQ4-Q_free_key"
+s = Songmrz(api_key)
+
+k = s.download("thallumaala")
+
+title = k.title
+url = k.url
+print(url)
+```
+
+
+
 
 # Bard
 
@@ -252,6 +274,7 @@ image = await Async().images(
     )
 
 print(image)
+```
 
 
 # image search
@@ -265,5 +288,7 @@ image = await HorridAPI().images(
     )
 
 print(image)
+
+```
 
 
