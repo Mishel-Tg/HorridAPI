@@ -27,29 +27,6 @@
 pip install HorridAPI
 ```
 
-
-# Usage
-```
-from HorridAPI import api
-ai = api.llama("who are you")
-print(ai)
-```
-
-# song download
-
-```
-from HorridAPI import Songmrz
-
-api_key = "horridapi_Db9RVKwf6zaBM8iatiQ4-Q_free_key"
-s = Songmrz(api_key)
-
-k = s.download("thallumaala")
-
-title = k.title
-url = k.url
-print(url)
-```
-
 # Mango 
 ```
 from HorridAPI import Mango
@@ -63,3 +40,230 @@ response = mango.chat.completions.create(
 
 print(response.text)
 ```
+
+# Bard
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+ai = horrid.bard("hi")
+print(ai)
+```
+
+# Upscale 
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+huhu = horrid.upscale(url="https://www.example.jpg", api_key="", scale=8) # you can get api key here https://t.me/XBOTSUPPORTS
+print(huhu)
+```
+
+
+# Wiki
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+wiki = horrid.wiki("what is ai?")
+print(wiki)
+```
+
+# Gemini image vision 
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+ne = horrid.search("today news", "https://www.example.jpg")
+print(ne)
+```
+
+# Proxy scrapper 
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+proxy = horrid.proxy("https://www.google.com/")
+print(proxy)
+```
+
+# news
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+news = horrid.news("today news")
+print(news)
+```
+
+# lyrics
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+lyrics = horrid.lyrics("thallumaala") 
+print(lyrics)
+```
+
+# Logo
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+logo = horrid.logo("mrz bots") 
+print(logo)
+```
+
+# instadl
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+instadl = horrid.instadl("") # Your Instagram reel or photo story any url link
+print(instadl)
+```
+
+
+# imagine
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+huhu = horrid.imagine(prompt="a cute cat", api_key="") # you can get api key here https://t.me/XBOTSUPPORTS
+print(huhu)
+```
+
+# execute
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+execute = horrid.execute(code="print('hi')", language="python", version="*")
+print(execute)
+```
+
+# Waifu image 
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+qr = horrid.waifu()
+print(qr)
+```
+
+# Gpt
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+gpt = horrid.gpt("hi")
+print(gpt)
+```
+
+# Qr
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+qr = horrid.qr("hi")
+print(qr)
+```
+
+# Dare
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+dare = horrid.dare()
+print(dare)
+```
+
+# Truth
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+truth = horrid.truth()
+print(truth)
+
+```
+# Pinterest
+
+```
+from HorridAPI import HorridAPI
+
+horrid = HorridAPI()
+pinterest = horrid.pinterest("anime male character")
+print(pinterest)
+```
+
+# Joke
+```
+from HorridAPI import HorridAPI
+
+joke = HorridAPI()
+he = joke.joke()
+print(he)
+```
+
+# Llama
+```
+from HorridAPI import HorridAPI
+
+api = HorridAPI()
+ai = api.llama("who are you")
+print(ai)
+```
+
+# Llama async 
+```
+from HorridAPI import Async
+
+api = Async()
+ai = api.llama("who are you")
+print(ai)
+```
+
+# image search async also using base url
+
+```
+from HorridAPI import Async
+
+image = await Async().images(
+        base_url="https://horrid-api.vercel.app/",
+        query="gojo",
+        page=7
+    )
+
+print(image)
+
+
+# image search
+
+```
+from HorridAPI import HorridAPI 
+image = await HorridAPI().images(
+        base_url="https://horrid-api.vercel.app/",
+        query="gojo",
+        page=7
+    )
+
+print(image)
+
+
