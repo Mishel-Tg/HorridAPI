@@ -302,7 +302,7 @@ print(ai)
 from HorridAPI import Async
 
 api = Async()
-ai = api.llama("who are you")
+ai = await api.llama("who are you")
 print(ai)
 ```
 
@@ -315,7 +315,7 @@ image = await Async().images(
         base_url="https://horrid-api.vercel.app/",
         query="gojo",
         page=7
-    )
+   )
 
 print(image)
 ```
