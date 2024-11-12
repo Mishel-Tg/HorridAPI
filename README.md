@@ -35,6 +35,21 @@ ai = api.llama("who are you")
 print(ai)
 ```
 
+# song download
+
+```
+from HorridAPI import Songmrz
+
+api_key = "horridapi_Db9RVKwf6zaBM8iatiQ4-Q_free_key"
+s = Songmrz(api_key)
+
+k = s.download("thallumaala")
+
+title = k.title
+url = k.url
+print(url)
+```
+
 # Mango 
 ```
 from HorridAPI import Mango
