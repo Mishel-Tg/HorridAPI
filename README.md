@@ -43,6 +43,37 @@ response = mango.chat.completions.create(
 print(response.text)
 ```
 
+
+# Text to video 
+
+This is a Python script that uses the HorridAPI to generate a video from a given text prompt. The script uses the LLVA API to create a realistic video from the text input.
+
+
+### Obtaining an API Key
+
+To get an API key, follow these steps:
+
+1. Go to https://t.me/XBOTSUPPORTS
+2. Follow the instructions to obtain an API key
+
+### Example Code
+
+
+from HorridAPI import LLVA
+
+api_key = ""  # replace with your API key
+prompt = "a girl and boy kissing"
+
+k = LLVA(prompt=prompt, api_key=api_key)
+video_path = k.generate_video()
+print(video_path)
+
+
+### Parameters
+
+* prompt: the text input to generate a video from
+* api_key: your HorridAPI key
+
 # Hey there!
 
 Welcome to my project! I'm excited to show you my powerful features. Here are some of the amazing things I can do:
