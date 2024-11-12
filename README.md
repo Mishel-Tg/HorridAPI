@@ -58,7 +58,7 @@ To get an API key, follow these steps:
 
 ### Example Code
 
-
+```
 from HorridAPI import LLVA
 
 api_key = ""  # replace with your API key
@@ -67,6 +67,7 @@ prompt = "a girl and boy kissing"
 k = LLVA(prompt=prompt, api_key=api_key)
 video_path = k.generate_video()
 print(video_path)
+```
 
 
 ### Parameters
