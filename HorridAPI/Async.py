@@ -204,12 +204,7 @@ class Async:
         if res.status_code == 200:
             return res.json()
         else:
-            return f"Error fetching bard response: {res.status_code}"
-
-    async def aipro(self, botname, query, owner, **kwargs):       
-        api = f'{self.url}aipro'
-        res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query})        
-        return res.json()
+            return f"Error fetching bard response: {res.status_code}"    
         
     async def llama(self, query=None, **kwargs):
         if not query:
