@@ -43,6 +43,18 @@ response = mango.chat.completions.create(
 print(response.text)
 ```
 
+# Hey there!
+
+Welcome to my project! I'm excited to show you my powerful features. Here are some of the amazing things I can do:
+
+AI Capabilities: I'm powered by artificial intelligence, which enables me to perform tasks with precision and speed.
+
+Logo Maker: Need a logo for your business or project? I've got you covered! I can generate professional-looking logos in no time.
+
+**Wiki:** Get instant access to a vast knowledge base with my built-in wiki feature. Search and learn from a vast repository of information.
+
+**Image Search:** Find the perfect image for your project with my advanced image search feature. I can search through millions of images to find the one that fits your needs.
+
 
 
 # song download
