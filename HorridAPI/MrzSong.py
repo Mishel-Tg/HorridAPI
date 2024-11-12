@@ -3,12 +3,13 @@
 import requests
 
 class Songmrz:
-    def __init__(self, api_key):
-        self.api_key = api_key
+    def __init__(self, api_key=None, **kwargs):        
         self.base_url = "https://horridapi.onrender.com/song"
 
-    def download(self, song_name):
-        response = requests.post(f"{self.base_url}?api_key={self.api_key}&query={song_name}")
+    def download(self, song_name=None, **kwargs):
+        if not song_name:
+            raise ValueError("Where the song name")
+        response = requests.post(f"{self.base_url}?query={song_name}")
         data = response.json()
         
         # Create an object to hold the song details
