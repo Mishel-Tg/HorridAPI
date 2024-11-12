@@ -4,10 +4,10 @@ import requests
 class Async:
     """Horrid API Wrapper Class"""
 
-    def __init__(self, base_url='https://horridapi.onrender.com/'):
+    def __init__(self, base_url='https://horridapi.onrender.com/', **kwargs):
         self.url = base_url
 
-    async def joke(self):
+    async def joke(self, **kwargs):
         """Fetches a joke from the Horrid API."""
         api = f'{self.url}joke'
         res = requests.get(api)
@@ -16,7 +16,7 @@ class Async:
         else:
             return f"Error fetching joke: {res.status_code}"
 
-    async def pinterest(self, query=None):  
+    async def pinterest(self, query=None, **kwargs):  
         if not query:
             raise ValueError("Where the query?")
         api = f'{self.url}/pinterest?query={query}'
@@ -26,7 +26,7 @@ class Async:
         else:
             return f"Error fetching pinterest response"   
             
-    async def truth(self):
+    async def truth(self, **kwargs):
         """Fetches a truth statement from the Horrid API."""
         api = f'{self.url}truth'
         res = requests.get(api)
@@ -35,7 +35,7 @@ class Async:
         else:
             return f"Error fetching truth: {res.status_code}"
       
-    async def dare(self):
+    async def dare(self, **kwargs):
         """Fetches a dare from the Horrid API."""
         api = f'{self.url}dare'
         res = requests.get(api)
@@ -44,7 +44,7 @@ class Async:
         else:
             return f"Error fetching dare: {res.status_code}"
 
-    async def qr(self, query=None): 
+    async def qr(self, query=None, **kwargs): 
         if not query:
             raise ValueError("Please Give Any query")
         url = f'{self.url}qr?text={query}'
@@ -55,7 +55,7 @@ class Async:
         else:
             return f"Error generating QR code: {response.status_code}"
 
-    async def song(self, query):               
+    async def song(self, query, **kwargs):               
         api = f'{self.url}song?query={query}'
         res = requests.get(api)
         if res.status_code == 200:
@@ -63,7 +63,7 @@ class Async:
         else:
             return f"Error fetching song: {res.status_code}"
         
-    async def gpt(self, query=None): 
+    async def gpt(self, query=None, **kwargs): 
         if not query:
             raise ValueError("Please Give any query add query=hi like that")
         api = f'{self.url}gpt?query={query}'
@@ -73,7 +73,7 @@ class Async:
         else:
             return f"Error fetching GPT response: {res.status_code}"
             
-    async def images(self, query=None, page=6):  
+    async def images(self, query=None, page=6, **kwargs):  
         if not query:
             raise ValueError("Where the query?")
         api = f'{self.url}images?query={query}&page={page}'
@@ -83,7 +83,7 @@ class Async:
         else:
             return f"Error fetching image search response"   
             
-    async def waifu(self):
+    async def waifu(self, **kwargs):
         api = f'{self.url}anime/waifu'
         res = requests.get(api)
         if res.status_code == 200:
@@ -92,14 +92,14 @@ class Async:
         else:
             return f"Error fetching waifu image: {res.status_code}"
 
-    async def enhance(self, image=None):
+    async def enhance(self, image=None, **kwargs):
         if not image:
             raise ValueError("Where the image If you don't know how to use this you can use Mangandi pip install mangandi")
         api = requests.post(f"{self.url}enhance", files={"image": image})
         bio = BytesIO(api.content)
         return bio
 
-    async def execute(self, code=None, language=None, version=None):  
+    async def execute(self, code=None, language=None, version=None, **kwargs):  
         if not code:
             raise ValueError("where the code?")
         if not language:
@@ -109,7 +109,7 @@ class Async:
         api = requests.post(f"{self.url}execute", json={"code": code, "language": language, "version": version})
         return api.json()
 
-    async def imagine(self, prompt=None, api_key=None):
+    async def imagine(self, prompt=None, api_key=None, **kwargs):
         if not prompt:
             raise ValueError("Where the prompt?")
         api = requests.get(f"{self.url}imagine?api_key={api_key}&prompt={prompt}")
@@ -121,7 +121,7 @@ class Async:
 
         return api.content           
 
-    async def image_search(self, query=None):  
+    async def image_search(self, query=None, **kwargs):  
         if not query:
             raise ValueError("Where the query?")
         api = f'{self.url}image_search?query={query}'
@@ -131,7 +131,7 @@ class Async:
         else:
             return f"Error fetching image search response"   
 
-    async def instadl(self, url=None):  
+    async def instadl(self, url=None, **kwargs):  
         if not url:
             raise ValueError("Where the instgram url?")
         api = f'{self.url}instadl?url={url}'
@@ -140,35 +140,35 @@ class Async:
             raise ValueError("Its not a Instagram url")
         return hehe
 
-    async def logo(self, text=None):  
+    async def logo(self, text=None, **kwargs):  
         if not text:
             raise ValueError("Give any name for the logo")
         api = f'{self.url}logo?text={text}'
         hehe = requests.post(api).json()
         return hehe
 
-    async def lyrics(self, song=None):  
+    async def lyrics(self, song=None, **kwargs):  
         if not song:
             raise ValueError("Give any song name")
         api = f'{self.url}lyrics?song={song}'
         hehe = requests.get(api).json()
         return hehe
 
-    async def news(self, query=None):  
+    async def news(self, query=None, **kwargs):  
         if not query:
             raise ValueError("Give any query")
         api = f'{self.url}news?query={query}'
         hehe = requests.get(api).json()
         return hehe
 
-    async def proxy(self, url=None):  
+    async def proxy(self, url=None, **kwargs):  
         if not url:
             raise ValueError("Give an url")
         api = f'{self.url}proxy?url={url}'
         hehe = requests.get(api).json()
         return hehe
 
-    async def search(self, query=None, link=None):  
+    async def search(self, query=None, link=None, **kwargs):  
         if not query:
             raise ValueError("Give any query")
         if not link:
@@ -177,14 +177,14 @@ class Async:
         hehe = requests.get(api).json()
         return hehe
 
-    async def wiki(self, query=None):  
+    async def wiki(self, query=None, **kwargs):  
         if not query:
             raise ValueError("Give any query")
         api = f'{self.url}wiki?query={query}'
         hehe = requests.get(api).json()
         return hehe
 
-    async def upscale(self, url=None, api_key=None, scale=8):
+    async def upscale(self, url=None, api_key=None, scale=8, **kwargs):
         if not url:
             raise ValueError("Give the image url")
         api = requests.get(f"{self.url}upscale?api_key={api_key}&url={url}&scale={scale}")
@@ -196,7 +196,7 @@ class Async:
 
         return api.content
  
-    async def bard(self, query=None):    
+    async def bard(self, query=None, **kwargs):    
         if not query:
             raise ValueError("Where the query?")
         api = f'{self.url}bard?query={query}'
@@ -206,12 +206,12 @@ class Async:
         else:
             return f"Error fetching bard response: {res.status_code}"
 
-    async def aipro(self, botname, query, owner):       
+    async def aipro(self, botname, query, owner, **kwargs):       
         api = f'{self.url}aipro'
         res = requests.post(api, json={'botname': botname, 'owner': owner, 'query': query})        
         return res.json()
         
-    async def llama(self, query=None):
+    async def llama(self, query=None, **kwargs):
         if not query:
             raise ValueError("Where the query?")
         """Fetches a response from the Horrid API's llama endpoint."""
