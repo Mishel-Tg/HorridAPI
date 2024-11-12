@@ -16,6 +16,16 @@ class HorridAPI:
         else:
             return f"Error fetching joke: {res.status_code}"
 
+    def pinterest(self, query=None):  
+        if not query:
+            raise ValueError("Where the query?")
+        api = f'{self.url}/pinterest?query={query}'
+        res = requests.get(api)
+        if res.status_code == 200:
+            return res.json()
+        else:
+            return f"Error fetching pinterest response"   
+
     def truth(self):
         """Fetches a truth statement from the Horrid API."""
         api = f'{self.url}truth'
