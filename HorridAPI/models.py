@@ -21,6 +21,7 @@ hehmango = {
     "claude-3.5-sonnet": 9,
     "gpt-4o": 10,
     "blackbox": "blackbox",
+    "gpt-3.5-turbo": 5,
     "1": 1,
     "2": 2,
     "3": 3,
