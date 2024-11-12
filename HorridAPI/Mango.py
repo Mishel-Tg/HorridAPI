@@ -6,7 +6,7 @@ class Mango:
     A class to generate content using AI models.
     """
 
-    def __init__(self, base_url="https://horridapi.onrender.com/mango"):
+    def __init__(self, base_url="https://horridapi.onrender.com/mango", **kwargs):
         """
         Initialize the class with the base URL of the API.
 
@@ -18,15 +18,15 @@ class Mango:
         self.chat = Chat(self)
 
 class Chat:
-    def __init__(self, mango):
+    def __init__(self, mango, **kwargs):
         self.mango = mango
         self.completions = Completions(self)
 
 class Completions:
-    def __init__(self, chat):
+    def __init__(self, chat, **kwargs):
         self.chat = chat
 
-    def create(self, model=None, messages=None):
+    def create(self, model=None, messages=None, **kwargs):
         if model not in hehmango:
             raise ValueError("Invalid model")        
         if not model:
@@ -43,7 +43,7 @@ class Completions:
             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 class Choices:
-    def __init__(self, response):          
+    def __init__(self, response, **kwargs):          
         self.text = response["response"]
 
 
