@@ -1,5 +1,4 @@
 import requests
-from .models import hehmango  
 
 class Mango:
     """
@@ -25,10 +24,23 @@ class images:
         
      def Generate(self, model=None, prompt=None, **kwargs):
          if not model:
-             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
+             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango/imagine/models")
          if not prompt:
-             raise ValueError("i can't find any prompt")                   
+             raise ValueError("i can't find any prompt")  
+         response = f"{self.chat.mango.base_url}/imagine?model={model}&prompt={prompt}"  
+         k = response.json()
+        if "error" in k and "invalid model" in k["error"]:
+            raise ValueError("Invalid model")
+        if response.status_code == 200:         
+            return URL(response.json())
+        else:
+            raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
+
+class URL:
+    def __init__(self, response, **kwargs):          
+        self.url = response["image"]
+        
 class Chat:
     def __init__(self, mango, **kwargs):
         self.mango = mango
@@ -38,17 +50,17 @@ class Completions:
     def __init__(self, chat, **kwargs):
         self.chat = chat
 
-    def create(self, model=None, messages=None, **kwargs):
-        if model not in hehmango:
-            raise ValueError("Invalid model")        
+    def create(self, model=None, messages=None, **kwargs):                          
         if not model:
             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
         if not messages:
             raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
         ms = {'messages': messages}        
-        api = f"{self.chat.mango.base_url}?model={hehmango[model]}"  
+        api = f"{self.chat.mango.base_url}?model={model}"  
         response = requests.post(api, json=ms)
-
+        k = response.json()
+        if "messages" in k and "invalid model" in k["messages"]:
+            raise ValueError("Invalid model")
         if response.status_code == 200:         
             return Choices(response.json())
         else:
