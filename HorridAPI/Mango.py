@@ -22,7 +22,7 @@ class images:
     def __init__(self, mango, **kwargs):
         self.mango = mango
         
-     def Generate(self, model=None, prompt=None, **kwargs):
+    def Generate(self, model=None, prompt=None, **kwargs):
          if not model:
              raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango/imagine/models")
          if not prompt:
