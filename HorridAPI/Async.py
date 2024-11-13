@@ -144,7 +144,7 @@ class Async:
         if not text:
             raise ValueError("Give any name for the logo")
         api = f'{self.url}logo?text={text}'
-        hehe = requests.post(api).json()
+        hehe = requests.get(api).json()
         return hehe
 
     async def lyrics(self, song=None, **kwargs):  
