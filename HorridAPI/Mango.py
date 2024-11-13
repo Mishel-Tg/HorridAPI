@@ -29,12 +29,12 @@ class images:
              raise ValueError("i can't find any prompt")  
          response = f"{self.chat.mango.base_url}/imagine?model={model}&prompt={prompt}"  
          k = response.json()
-        if "error" in k and "invalid model" in k["error"]:
-            raise ValueError("Invalid model")
-        if response.status_code == 200:         
-            return URL(response.json())
-        else:
-            raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+         if "error" in k and "invalid model" in k["error"]:
+             raise ValueError("Invalid model")
+         if response.status_code == 200:         
+             return URL(response.json())
+         else:
+             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
 
 
 class URL:
