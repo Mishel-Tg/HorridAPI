@@ -43,6 +43,21 @@ response = mango.chat.completions.create(
 print(response.text)
 ```
 
+### Mango Image Generation
+
+```
+from HorridAPI import Mango
+
+mango = Mango()
+
+response = mango.images.generate(
+    model="flux-1.1-pro",
+    prompt="a boy looking in the river"
+)
+
+print(response.url)
+```
+
 
 # Text to video 
 
