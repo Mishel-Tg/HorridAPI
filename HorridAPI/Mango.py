@@ -12,8 +12,7 @@ class Mango:
         Args:
             base_url (str, optional): The base URL of the API. Defaults to "https://horridapi.onrender.com/mango".
         """
-        self.base_url = base_url
-        self.models = hehmango      
+        self.base_url = base_url              
         self.chat = Chat(self)
         self.images = images(self)
 
