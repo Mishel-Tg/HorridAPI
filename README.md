@@ -30,6 +30,10 @@ pip install HorridAPI
 
 
 # Mango 
+
+
+### Mango Text Generation
+
 ```
 from HorridAPI import Mango
 
