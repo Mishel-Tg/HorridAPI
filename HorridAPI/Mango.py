@@ -16,6 +16,18 @@ class Mango:
         self.base_url = base_url
         self.models = hehmango      
         self.chat = Chat(self)
+        self.images = images(self)
+
+
+class images:
+    def __init__(self, mango, **kwargs):
+        self.mango = mango
+        
+     def Generate(self, model=None, prompt=None, **kwargs):
+         if not model:
+             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
+         if not prompt:
+             raise ValueError("i can't find any prompt")                   
 
 class Chat:
     def __init__(self, mango, **kwargs):
