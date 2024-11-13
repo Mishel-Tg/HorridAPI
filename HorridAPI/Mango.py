@@ -21,12 +21,12 @@ class images:
     def __init__(self, mango, **kwargs):
         self.mango = mango
         
-    def Generate(self, model=None, prompt=None, **kwargs):
+    def generate(self, model=None, prompt=None, **kwargs):
          if not model:
              raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango/imagine/models")
          if not prompt:
              raise ValueError("i can't find any prompt")  
-         response = f"{self.chat.mango.base_url}/imagine?model={model}&prompt={prompt}"  
+         response = f"{self.mango.base_url}/imagine?model={model}&prompt={prompt}"  
          k = response.json()
          if "error" in k and "invalid model" in k["error"]:
              raise ValueError("Invalid model")
