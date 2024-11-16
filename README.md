@@ -1,19 +1,19 @@
 # HorridAPI
 
 <p align="center">
-    <a href="https://github.com/Mishel-tg/HorridAPI">
+    <a href="https://github.com/Mishel-07/HorridAPI">
         <img src="https://img.shields.io/github/repo-size/Mishel-tg/HorridAPI?color=red&logo=github&logoColor=green&style=flat" />
     </a>
-    <a href="https://github.com/Mishel-tg/HorridAPI/commits/main">
+    <a href="https://github.com/Mishel-07/HorridAPI/commits/main">
         <img src="https://img.shields.io/github/last-commit/Mishel-tg/HorridAPI?color=brown&logo=github&logoColor=green&style=flat" />
     </a>
-    <a href="https://github.com/Mishel-tg/HorridAPI/issues">
+    <a href="https://github.com/Mishel-07/HorridAPI/issues">
         <img src="https://img.shields.io/github/issues/Mishel-tg/HorridAPI?color=blueviolet&logo=github&logoColor=green&style=flat" />
     </a>
-    <a href="https://github.com/Mishel-tg/HorridAPI/fork">
+    <a href="https://github.com/Mishel-07/HorridAPI/fork">
         <img src="https://img.shields.io/github/forks/Mishel-tg/HorridAPI?color=orange&logo=github&logoColor=green&style=flat" />
     </a>
-    <a href="https://github.com/Mishel-tg/HorridAPI/stargazers">
+    <a href="https://github.com/Mishel-07/HorridAPI/stargazers">
         <img src="https://img.shields.io/github/stars/Mishel-tg/HorridAPI?color=yellow&logo=github&logoColor=green&style=flat" />
     </a>
     <a href="https://pypi.org/project/HorridAPI/">
