@@ -17,16 +17,16 @@ setup(
     name="HorridAPI",
     version=version(),
     author="Horrid",
-    author_email="narutomalayalam@gmail.com",
-    description="Asynchronous Python Wrapper For HorridAPI",
+    author_email="mishel@gmail.temb",
+    description="Python Wrapper For HorridAPI",
     long_description_content_type="text/markdown",
     long_description=long_desc,
     packages=find_packages(),
     license="MIT",
-    url="https://github.com/Mishel-Tg/HorridAPI",
-    download_url="https://github.com/Mishel-Tg/HorridAPI/blob/main/README.md",
+    url="https://github.com/Mishel-07/HorridAPI",
+    download_url="https://github.com/Mishel-07/HorridAPI/blob/main/README.md",
     install_requires=["requests"],
-    keywords=['python', "HorridAPI","mrz_bots", "telegram", "WhatsAppbot"],
+    keywords=["python", "HorridAPI"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -52,9 +52,9 @@ setup(
     ],
     
     project_urls={
-        "Tracker": "https://github.com/Mishel-Tg/HorridAPI/issues",
+        "Tracker": "https://github.com/Mishel-07/HorridAPI/issues",
         "Community": "https://t.me/XBOTSUPPORTS",
-        "Source": "https://github.com/Mishel-Tg/HorridAPI",
+        "Source": "https://github.com/Mishel-07/HorridAPI",
     },
     python_requires="~=3.7",
 )
