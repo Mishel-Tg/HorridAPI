@@ -4,7 +4,7 @@ import requests
 class HorridAPI:
     """Horrid API Wrapper Class"""
 
-    def __init__(self, base_url='https://horridapi.onrender.com/', **kwargs):
+    def __init__(self, base_url='https://horrid-api.vercel.app/', **kwargs):
         self.url = base_url
 
     def joke(self, **kwargs):
