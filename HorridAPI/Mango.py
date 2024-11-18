@@ -5,7 +5,7 @@ class Mango:
     A class to generate content using AI models.
     """
 
-    def __init__(self, base_url="https://horridapi.onrender.com/mango", **kwargs):
+    def __init__(self, base_url="https://horrid-api.vercel.app/mango", **kwargs):
         """
         Initialize the class with the base URL of the API.
 
@@ -23,7 +23,7 @@ class images:
         
     def generate(self, model=None, prompt=None, **kwargs):
          if not model:
-             raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango/imagine/models")
+             raise ValueError("i can't find any model, You can see model here https://horrid-api.vercel.app/mango/imagine/models")
          if not prompt:
              raise ValueError("i can't find any prompt")  
          response = requests.get(f"{self.mango.base_url}/imagine?model={model}&prompt={prompt}")
@@ -33,7 +33,7 @@ class images:
          if response.status_code == 200:         
              return URL(response.json())
          else:
-             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+             raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-07/HorridAPI/issues")
 
 
 class URL:
@@ -51,9 +51,9 @@ class Completions:
 
     def create(self, model=None, messages=None, **kwargs):                          
         if not model:
-            raise ValueError("i can't find any model, You can see model here https://horridapi.onrender.com/mango")
+            raise ValueError("i can't find any model, You can see model here https://horrid-api.vercel.app/mango")
         if not messages:
-            raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+            raise ValueError("An error Report @XBOTSUPPORTS or https://github.com/Mishel-07/HorridAPI/issues")
         ms = {'messages': messages}        
         api = f"{self.chat.mango.base_url}?model={model}"  
         response = requests.post(api, json=ms)
@@ -63,7 +63,7 @@ class Completions:
         if response.status_code == 200:         
             return Choices(response.json())
         else:
-            raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-Tg/HorridAPI/issues")
+            raise Exception(f"Error: Report  @XBOTSUPPORTS or https://github.com/Mishel-07/HorridAPI/issues")
 
 class Choices:
     def __init__(self, response, **kwargs):          
