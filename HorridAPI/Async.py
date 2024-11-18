@@ -4,7 +4,7 @@ import requests
 class Async:
     """Horrid API Wrapper Class"""
 
-    def __init__(self, base_url='https://horridapi.onrender.com/', **kwargs):
+    def __init__(self, base_url='https://horrid-api.vercel.app/', **kwargs):
         self.url = base_url
 
     async def joke(self, **kwargs):
