@@ -4,7 +4,7 @@ import requests
 
 class Songmrz:
     def __init__(self, api_key=None, **kwargs):        
-        self.base_url = "https://horridapi.onrender.com/song"
+        self.base_url = "https://horrid-api.vercel.app/song"
 
     def download(self, song_name=None, **kwargs):
         if not song_name:
