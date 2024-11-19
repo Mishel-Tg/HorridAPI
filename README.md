@@ -113,8 +113,8 @@ Logo Maker: Need a logo for your business or project? I've got you covered! I ca
 ```
 from HorridAPI import Songmrz
 
-api_key = "horridapi_Db9RVKwf6zaBM8iatiQ4-Q_free_key"
-s = Songmrz(api_key)
+
+s = Songmrz()
 
 k = s.download("thallumaala")
 
